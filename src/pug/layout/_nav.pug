@@ -1,5 +1,18 @@
-mixin menu(menu_items)
-	ul.navbar-nav
-
+//- mixin menu(menu_items)
+//-	ul.navbar-nav
 nav.navbar
-	nav-center
+	.nav-center
+		div(class="")
+			.button.toggle-nav
+				i.fas.fa-bars
+			ul.nav-links
+				li
+					a(class="nav-link" href="index.pug") Home
+					a(class="nav-link" href="src/pug/pages/products") products
+					a(class="nav-link" href="src/pug/pages/about.pug") about
+		img(src="src/images/logo-white.svg" class="nav-logo" alt="logo")
+		.toggle-container
+			button.toggle-cart
+				i.fas.fa-shopping-cart
+			span.cart-item-count= 1
+

@@ -1,27 +1,31 @@
 -
-	let pages = {
-		home:     {
-			url: "index.pug",
+	let pages = [
+		{
+			title:	"Home",
+			href:		"./index.pug",
 		},
-		products: "products.pug",
-		about:    "about.pug"
-	}
+		{
+			title:	"Products",
+			href:		"src/pug/pages/products.pug",
+		},
+		{
+			title:	"About",
+			href:		"src/pug/pages/about.pug",
+		}
+	]
 
 -
 	let metaKeywords = {
-		keywordsHome:     "home page",
-		keywordsAbout:    "about page",
-		keywordsProduct:  "product page",
-		keywordsProducts: "products page",
+		keywordsHome:			"home page",
+		keywordsAbout:		"about page",
+		keywordsProduct:	"product page",
+		keywordsProducts:	"products page",
 	};
 
 -
 	let metaDescription = {
-		descriptionHome:     "Description home page",
-		descriptionAbout:    "Description about page",
-		descriptionProduct:  "Description product page",
-		descriptionProducts: "Description products page",
+		descriptionHome:			"Description home page",
+		descriptionAbout:			"Description about page",
+		descriptionProduct:		"Description product page",
+		descriptionProducts:	"Description products page",
 	};
-
-
-

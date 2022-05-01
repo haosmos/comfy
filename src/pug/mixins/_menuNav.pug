@@ -1,0 +1,6 @@
+mixin menuNav(pages)
+	each item in pages
+		li
+			a(class="nav-link" href=item.href) #{item.title}
+
+

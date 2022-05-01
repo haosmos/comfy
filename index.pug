@@ -1,5 +1,7 @@
 extends src/pug/_template
 
+include src/pug/mixins/_sidebar
+
 block metaTagsForCurrentPage
 	meta(name="description" content=metaDescription.descriptionHome)
 	meta(name="keywords" content=metaKeywords.keywordsHome)
@@ -7,8 +9,18 @@ block title
 	| Home page
 
 	block content
+		// hero
 		section.hero
 			.hero-container
 				h1.text-slanted rest, relax, unwind
 				h3 Embrace your choice — we do
 				a(href="" class="hero-btn") show now
+		// sidebar
+		.sidebar-overlay.show
+			aside.sidebar
+				// close the sidebar
+				button.sidebar-close
+					i.fas.fa-times
+				// links
+				ul.sidebar-links
+					+sidebar(pages)

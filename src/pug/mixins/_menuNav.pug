@@ -1,6 +1,5 @@
 mixin menuNav(pages)
-	each item in pages
+	each page in pages
 		li
-			a(class="nav-link" href=item.href) #{item.title}
-
+			a(class="nav-link" href=page.href) #{page.title}
 

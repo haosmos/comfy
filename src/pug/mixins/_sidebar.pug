@@ -2,4 +2,5 @@ mixin sidebar(pages)
 	each page in pages
 		li
 			a(class="sidebar-link" href=page.href)
-				i.fas.fa-home #{page.title}
+				i(class=page.class)
+				| #{page.title}

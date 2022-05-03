@@ -6,6 +6,8 @@ const closeBtn = getElement(".sidebar-close");
 
 toggleNav.addEventListener("click", () => {
   sidebarOverlay.classList.add("show");
+
+  console.log(getElement);
 })
 
 closeBtn.addEventListener("click", () => {

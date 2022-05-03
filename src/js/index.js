@@ -7,3 +7,5 @@ import fetchProducts from './products/fetchProducts.js';
 import { setupStore, store } from './store.js';
 import display from './products/displayProducts.js';
 import { getElement } from './utils.js';
+
+console.log("hello world");

@@ -1,13 +1,15 @@
 include ../mixins/_menuNav
 
-nav.navbar
-	.nav-center
-		div(class="")
-			button.toggle-nav
-				i.fas.fa-bars
-			ul.nav-links
-				+menuNav(pages)
-		.toggle-container
-			button.toggle-cart
-				i.fas.fa-shopping-cart
-			span.cart-item-count= 1
+mixin nav(classNav = "navbar", page)
+	nav(class=classNav)
+		.nav-center
+			div(class="")
+				button.toggle-nav
+					i.fas.fa-bars
+				ul.nav-links
+					+menuNav(pages)
+			block colorLogo
+			.toggle-container
+				button.toggle-cart
+					i.fas.fa-shopping-cart
+				span.cart-item-count= 4

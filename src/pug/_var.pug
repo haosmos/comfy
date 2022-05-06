@@ -1,18 +1,25 @@
 -
+	let paths = {
+		home:			"/index.pug",
+		about:		"/src/pug/pages/about.pug",
+		products:	"/src/pug/pages/products.pug"
+	}
+
+-
 	let pages = [
 		{
 			title:	"Home",
-			href:		"./index.pug",
+			href:		"/index.pug",
 			class:	"fas fa-home fa-fw"
 		},
 		{
 			title:	"Products",
-			href:		"src/pug/pages/products.pug",
+			href:		"/src/pug/pages/products.pug",
 			class:	"fas fa-couch fa-fw"
 		},
 		{
 			title:	"About",
-			href:		"src/pug/pages/about.pug",
+			href:		"/src/pug/pages/about.pug",
 			class:	"fas fa-book fa-fw"
 		}
 	]
@@ -32,3 +39,4 @@
 		descriptionProduct:		"Description product page",
 		descriptionProducts:	"Description products page",
 	};
+

@@ -1,13 +1,64 @@
 block var
-	include /src/pug/_var
+	include ../pug/_var
+include mixins/_sidebar
+include layout/_nav
 
 doctype html
 html(lang="en")
 	include layout/_head
 
-	body
-		include layout/_nav
-		block content
+body
+	//include blocks/_navbar
+	block navigation
+		+nav()
+
+	block content
+		// hero
+		block hero
+		// sidebar"commerce"
+		.sidebar-overlay
+			aside.sidebar
+				// close the sidebar
+				button.sidebar-close
+					i.fas.fa-times
+				// links
+				ul.sidebar-links
+					+sidebar(pages)
+		.cart-overlay
+			aside.cart
+				button.cart-close
+					i.fas.fa-times
+				header
+					h3.text-slanted your bag
+				// cart items
+				.cart-items
+					// single items
+					article(class="cart-item" data-id="")
+						img(class="cart-item-img" src="/src/images/main-bcg.jpeg"
+							alt="name")
+						// item info
+						div
+							h4.cart-item-name high-back bench
+							p.cart-item-price $13.99
+							button.cart-item-remove-btn remove
+						// amount toggle
+						div
+							button.cart-item-increase-btn
+								i.fas.fa-chevron-up
+							p.cart-item-amount 1
+							button.cart-item-decrease-btn
+								i.fas.fa-chevron-down
+
+					// end of single items
+
+				footer
+					h3.cart-total.text-slanted total: $12.99
+					button.cart-checkout.btn checkout
+
+		// end of cart items
+		// secrion about page content
+		block aboutPageContent
 		include layout/_footer
+
 	append body
-		script(src="src/js/index.js" type="module")
+		script(src="/src/js/index.js" type="module")

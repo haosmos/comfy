@@ -37,15 +37,15 @@ body
 						img(class="cart-item-img" src="/src/images/main-bcg.jpeg"
 							alt="name")
 						// item info
-						div
-							h4.cart-item-name high-back bench
-							p.cart-item-price $13.99
+						.cart-item-info
+							h5.cart-item-name high-back bench
+							span.cart-item-price $13.99
 							button.cart-item-remove-btn remove
 						// amount toggle
 						div
 							button.cart-item-increase-btn
 								i.fas.fa-chevron-up
-							p.cart-item-amount 1
+							span.cart-item-amount 1
 							button.cart-item-decrease-btn
 								i.fas.fa-chevron-down
 
@@ -54,7 +54,7 @@ body
 				footer
 					h3.cart-total.text-slanted total: $12.99
 					button.cart-checkout.btn checkout
-
+		block featured
 		// end of cart items
 		// secrion about page content
 		block aboutPageContent

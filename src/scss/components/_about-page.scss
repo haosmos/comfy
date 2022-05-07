@@ -23,3 +23,15 @@ About Page
   margin-top: 2rem;
   max-width: 45em;
 }
+
+.page .nav-link {
+  color: var(--gray-100);
+}
+
+.page .nav-link:hover {
+  color: var(--primary-500);
+}
+
+.page .toggle-cart {
+  color: var(--gray-100);
+}

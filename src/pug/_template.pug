@@ -24,6 +24,13 @@ body
 				// links
 				ul.sidebar-links
 					+sidebar(pages)
+
+		block featured
+		// end of cart items
+		// secrion about page content
+		block aboutPageContent
+		include layout/_footer
+
 		.cart-overlay
 			aside.cart
 				button.cart-close
@@ -54,11 +61,6 @@ body
 				footer
 					h3.cart-total.text-slanted total: $12.99
 					button.cart-checkout.btn checkout
-		block featured
-		// end of cart items
-		// secrion about page content
-		block aboutPageContent
-		include layout/_footer
 
 	append body
 		script(src="/src/js/index.js" type="module")

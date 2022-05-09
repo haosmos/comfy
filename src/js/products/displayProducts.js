@@ -13,7 +13,7 @@ const display = (products, element) => {
           
             <img src="${image}" alt="${name}" class="product-img img" 
             />
-           
+                  
             <div class="product-icons">
               <a href="/src/pug/pages/product.pug?id=${id}" class="product-icon">
                 <i class="fas fa-search"></i>
@@ -33,6 +33,15 @@ const display = (products, element) => {
       </article>  
     `;
   }).join('');
+
+  element.addEventListener('click', (e) => {
+    const parentEl = e.target.parentElement;
+
+    if (parentEl.classList.contains('product-cart-btn')) {
+      addToCart(parentEl.dataset.id);
+    }
+    console.log(parentEl);
+  });
 };
 
 export default display;

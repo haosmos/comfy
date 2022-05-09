@@ -18,15 +18,15 @@
 }
 
 .sidebar {
-  background: var(--white);
-  border-radius: var(--borderRadius);
-  box-shadow: var(--shadow-2);
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  box-shadow: var(--dark-shadow);
   height: 95vh;
   max-width: var(--fixed-width);
   padding: 4rem;
   position: relative;
   transform: scale(0);
-  width: var(--fluid-width);
+  width: 90vw;
 }
 
 .show .sidebar {
@@ -36,7 +36,7 @@
 .sidebar-close {
   background: transparent;
   border-color: transparent;
-  color: var(--grey-500);
+  color: var(--clr-grey-5);
   cursor: pointer;
   font-size: 2rem;
   position: absolute;
@@ -45,13 +45,13 @@
 }
 
 .sidebar-link {
-  color: var(--textColor);
+  color: var(--clr-grey-1);
   font-size: 1.5rem;
   text-transform: capitalize;
 }
 
 .sidebar-link i {
-  color: var(--grey-500);
+  color: var(--clr-grey-5);
   margin-bottom: 1rem;
   margin-right: 1rem;
 }

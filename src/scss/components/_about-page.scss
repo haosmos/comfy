@@ -5,33 +5,33 @@ About Page
 */
 
 .page-hero {
-  background: var(--grey-200);
-  color: var(--grey-500);
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-5);
   display: grid;
   min-height: 20vh;
   place-items: center;
 }
 
 .page-hero-title {
-  margin-bottom: 0;
+  font-weight: 500;
 }
 
 .about-text {
-  color: var(--grey-500);
   line-height: 2;
   margin: 0 auto;
   margin-top: 2rem;
   max-width: 45em;
 }
 
+/* page navbar */
 .page .nav-link {
-  color: var(--gray-100);
+  color: var(--clr-grey-1);
 }
 
 .page .nav-link:hover {
-  color: var(--primary-500);
+  color: var(--clr-primary-5);
 }
 
 .page .toggle-cart {
-  color: var(--gray-100);
+  color: var(--clr-grey-1);
 }

@@ -18,24 +18,14 @@ block featured
 	// featured
 	section.section.featured
 		.title
-			span
-			|
-			h2 featured
-			|
-			span
+			h2
+				span
+				|  featured
+				span
+				|
 		.featured-center.section-center
 			// single product item
-			article.product
-				.product-container
-					img(src="src/images/main-bcg.jpeg" alt="product" class="product-img img")
-					// product icons
-					.product-icons
-						a(href="/src/pug/pages/product.pug?id=1" class="product-icon")
-							i.fas.fa-search
-						button(class="product-cart-btn product-icon" data-id="1")
-							i.fas.fa-shopping-cart
-				footer
-					p.product-name name
-					h4.product-price $13.99
-			// end of single product item
-		a(href="/src/pug/pages/products.pug" class="btn") view all products
+			h2.section-loading
+				| Loading...
+
+		a(href="/src/pug/pages/products.pug" class="btn") all products

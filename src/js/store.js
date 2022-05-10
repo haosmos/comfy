@@ -16,8 +16,6 @@ const setupStore = (products) => {
 
 };
 
-console.log(store);
-
 const findProduct = () => {
 };
 

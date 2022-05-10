@@ -8,6 +8,8 @@ import fetchProducts from '/src/js/products/fetchProducts.js';
 import { setupStore, store } from '/src/js/store.js';
 import display from '/src/js/products/displayProducts.js';
 import { getElement, setStorageItem } from '/src/js/utils.js';
+import setupCompanies from "./filters/companies";
+import setupPrice from "./filters/price";
 import setupSearch from "./filters/search";
 
 const init = async () => {
@@ -29,6 +31,8 @@ const init = async () => {
       const loading = getElement(".page-loading");
       display(store, el);
       setupSearch(store);
+      setupCompanies(store)
+      setupPrice(store);
       loading.style.display = "none";
     }
 

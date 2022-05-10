@@ -90,10 +90,10 @@ Products Page
 }
 
 .filter-error {
-  left: 0;
+  left: 10rem;
   margin-top: 4rem;
   position: absolute;
   text-align: center;
   top: 5rem;
-  width: 100%;
+  width: calc(100% - 10rem);
 }

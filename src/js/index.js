@@ -8,6 +8,7 @@ import fetchProducts from '/src/js/products/fetchProducts.js';
 import { setupStore, store } from '/src/js/store.js';
 import display from '/src/js/products/displayProducts.js';
 import { getElement, setStorageItem } from '/src/js/utils.js';
+import setupSearch from "./filters/search";
 
 const init = async () => {
   const products = await fetchProducts();
@@ -27,6 +28,7 @@ const init = async () => {
       let el = getElement(".products-container");
       const loading = getElement(".page-loading");
       display(store, el);
+      setupSearch(store);
       loading.style.display = "none";
     }
 

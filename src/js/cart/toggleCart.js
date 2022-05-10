@@ -6,8 +6,6 @@ const toggleCartBtn = getElement('.toggle-cart');
 
 toggleCartBtn.addEventListener('click', () => {
   cartOverlay.classList.add("show");
-
-  console.log(getElement);
 })
 
 closeCartBtn.addEventListener('click', () => {

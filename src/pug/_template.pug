@@ -31,6 +31,8 @@ body
 		block aboutPageContent
 		include layout/_footer
 
+		block productsContainer
+
 		.cart-overlay
 			aside.cart
 				button.cart-close
@@ -61,6 +63,5 @@ body
 				footer
 					h3.cart-total.text-slanted total: $12.99
 					button.cart-checkout.btn checkout
-
 	append body
 		script(src="/src/js/index.js" type="module")

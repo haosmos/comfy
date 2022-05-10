@@ -1,10 +1,46 @@
-include ../_var
-include ../mixins/_menuNav
-head
-	include ../layout/_head
+extends ../_template
 
-body
-	h1 this is Product Page!
+block metaTagsForCurrentPage
+	meta(name="description" content=metaDescription.descriptionProducts)
+	meta(name="keywords" content=metaKeywords.keywordsProducts)
+block title
+	| Products
 
-	ul
-		+menuNav(pages)
+block navigation
+	+nav("navbar page", products)
+
+block colorLogo
+	img(src="/src/images/logo-black.svg" class="nav-logo" alt="logo")
+
+block hero
+	section.page-hero
+		.section-center
+			h3.page-hero-title
+				| Home / Products
+
+block productsContainer
+	.products
+		// filter
+		.filters
+			.filters-container
+				// search
+				form.input-form
+					input(class="search-input" type="text" name="search"
+						placeholder="search...")
+				// categories
+				h4 Company
+				article.companies
+					button.company-btn all
+					button.company-btn Ikea
+				h4 Price
+				form.price-form
+					input(type="range" class="price-filter" name="price" min="0" value="50" max="100")
+			
+
+		.products-container
+
+		// page loading
+		.page-loading
+			h2 loading...
+
+

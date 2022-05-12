@@ -1,0 +1,45 @@
+extends ../_template
+
+block metaTagsForCurrentPage
+	meta(name="description" content=metaDescription.descriptionProduct)
+	meta(name="keywords" content=metaKeywords.keywordsProduct)
+block title
+	| Single Product
+
+block navigation
+	+nav("navbar page")
+
+block colorLogo
+	img(src="/src/images/logo-black.svg" class="nav-logo" alt="logo")
+
+block hero
+	section.page-hero
+		.section-center
+			h3.page-hero-title
+				| Home / Single Product
+
+block PageContent
+	section.single-product
+		.section-center.single-product-center
+			img(src="/src/images/main-bcg.jpeg" class="single-product-img img"
+				alt="single product")
+			article.single-product-info
+				div
+					h2.single-product-title couch
+					p.single-product-company.text-slanted by marcos
+					p.single-product-price $30
+					.single-product-colors
+					p.single-product-desc
+						| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam cupiditate distinctio dolor dolorem excepturi explicabo fugit in ipsum itaque iure iusto maiores nihil, nulla odit quibusdam repudiandae tempore voluptatem!
+					button(class="addToCart btn" data-id="id") add to cart
+	.page-loading
+		h2 Loading...
+
+
+
+
+
+
+
+
+

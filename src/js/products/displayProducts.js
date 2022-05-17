@@ -20,7 +20,7 @@ const display = (products, element) => {
                 <i class="fas fa-search"></i>
               </a>
 
-              <button class="product-cart-btn product-icon" data-${id}="${id}">
+              <button class="product-cart-btn product-icon" data-id="${id}">
                 <i class="fas fa-shopping-cart"></i>
               </button>
             </div>
@@ -38,13 +38,22 @@ const display = (products, element) => {
 
   // console.log(localStorage);
 
-  element.addEventListener('click', (e) => {
-    const parentEl = e.target.parentElement;
+  // element.addEventListener('click', (e) => {
+  //   const parent = e.target.parentElement;
+  //   console.log(parent);
+  //
+  //   if (parent.classList.contains('product-cart-btn')) {
+  //     addToCart(parent.dataset.id);
+  //   }
+  //
+  // });
 
-    if (parentEl.classList.contains('product-cart-btn')) {
-      addToCart(parentEl.dataset.id);
+  element.addEventListener('click', function (e) {
+    const parent = e.target.parentElement;
+
+    if (parent.classList.contains('product-cart-btn')) {
+      addToCart(parent.dataset.id);
     }
-    console.log(parentEl);
   });
 };
 

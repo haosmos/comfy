@@ -66,7 +66,13 @@ export default async function displayProductData() {
   }
 
   loading.style.display = 'none';
+
+  cartBtn.addEventListener('click', () => {
+    addToCart(productID);
+  });
+
 }
+
 
 // window.addEventListener('load', async () => {
 //   console.log("store from product", store);

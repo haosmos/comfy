@@ -11,13 +11,7 @@ import display from "../products/displayProducts";
 import fetchProducts from "../products/fetchProducts";
 import { setupStore, store } from "../store";
 import { getElement, setStorageItem } from "../utils";
-
-// specific imports
-// import { store } from '../store.js';
-// import display from '../products/displayProducts.js';
-// import { getElement } from '../utils.js';
-// //
-// display(store, getElement(".products-container"));
+import displayProductData from "../pages/product.js";
 
 const init = async () => {
   // display products
@@ -26,10 +20,10 @@ const init = async () => {
   if (products) {
     // add products to store
     setupStore(products);
-    const featured = store.filter((product) => product.featured === true);
 
     // display featured products
     if (getElement(".featured-center")) {
+      const featured = store.filter((product) => product.featured === true);
       let el = getElement(".featured-center");
       display(featured, el);
     }
@@ -43,9 +37,11 @@ const init = async () => {
       setupPrice(store);
       loading.style.display = "none";
     }
-  }
 
-  setStorageItem()
+    if (getElement(".single-product")) {
+      await displayProductData();
+    }
+  }
 }
 
 window.addEventListener("DOMContentLoaded", init);

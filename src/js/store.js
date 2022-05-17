@@ -12,7 +12,7 @@ const setupStore = (products) => {
     return { id, featured, name, price, company, colors, image };
   });
 
-  setStorageItem('store', store)
+  setStorageItem('store', store);
 
 };
 

@@ -15,9 +15,11 @@ const display = (products, element) => {
             />
                   
             <div class="product-icons">
-              <a href="/src/pug/pages/product.html?id=${id}" class="product-icon">
+            
+              <a href="/src/pug/pages/productPage.html?id=${id}" class="product-icon">
                 <i class="fas fa-search"></i>
               </a>
+
               <button class="product-cart-btn product-icon" data-${id}="${id}">
                 <i class="fas fa-shopping-cart"></i>
               </button>
@@ -33,6 +35,8 @@ const display = (products, element) => {
       </article>  
     `;
   }).join('');
+
+  // console.log(localStorage);
 
   element.addEventListener('click', (e) => {
     const parentEl = e.target.parentElement;

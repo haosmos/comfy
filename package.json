@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "e-commerce store",
 	"scripts": {
-		"dev": "parcel index.pug",
+		"dev": "parcel index.pug src/pug/pages/*",
 		"build": "parcel build index.pug --public-url ./ --dist-dir public --no-scope-hoist"
 	},
 	"author": "chaosmos",

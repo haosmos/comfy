@@ -27,8 +27,6 @@ export const addToCart = (id) => {
     cart = [ ...cart, product ];
 
     addToCartDOM(product);
-    console.log(cart);
-    // console.log(product);
   } else {
     // update values
     const amount = increaseAmount(id);
@@ -72,7 +70,6 @@ function displayCartItemsDOM() {
 
 function removeItem(id) {
   cart = cart.filter((cartItem) => cartItem.id !== id);
-  console.log(cart);
 }
 
 function increaseAmount(id) {
@@ -81,6 +78,21 @@ function increaseAmount(id) {
   cart = cart.map((cartItem) => {
     if (cartItem.id === id) {
       newAmount = cartItem.amount + 1;
+      cartItem = { ...cartItem, amount: newAmount };
+    }
+
+    return cartItem;
+  });
+
+  return newAmount;
+}
+
+function decreaseAmount(id) {
+  let newAmount;
+
+  cart = cart.map((cartItem) => {
+    if (cartItem.id === id) {
+      newAmount = cartItem.amount - 1;
       cartItem = { ...cartItem, amount: newAmount };
     }
 
@@ -114,7 +126,31 @@ function setupCartFunctionality() {
     }
 
     // decrease amount
+    if (parent.classList.contains('cart-item-decrease-btn')) {
+      const newAmount = decreaseAmount(parentId);
 
+      function removeItemFromLocalStorage(id) {
+        let cartItems = localStorage.getItem('cart');
+        console.log(cartItems);
+        let itemsID = JSON.parse(cartItems);
+        console.log(itemsID);
+        let newCartItems = itemsID.filter((item) => item.id !== id);
+        console.log(newCartItems);
+        localStorage.setItem('cart', JSON.stringify(newCartItems));
+        localStorage.getItem('cart');
+      }
+
+      if (newAmount === 0) {
+        removeItem(id);
+        parent.parentElement.parentElement.remove();
+
+        removeItemFromLocalStorage(id);
+        // localStorage.removeItem('cart.id');
+        // console.log(localStorage.cart[id]);
+      } else {
+        parent.previousElementSibling.textContent = newAmount;
+      }
+    }
 
     displayCartItemCount();
     displayCartTotal();
@@ -135,7 +171,6 @@ const init = () => {
   // setup cart functionality
   setupCartFunctionality();
 
-  console.log(cart);
 };
 
 init();

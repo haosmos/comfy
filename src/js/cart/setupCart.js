@@ -30,7 +30,16 @@ export const addToCart = (id) => {
     console.log(cart);
     // console.log(product);
   } else {
+    // update values
+    const amount = increaseAmount(id);
+    console.log(amount);
 
+    const items = [ ...cartItemDOM.querySelectorAll('.cart-item-amount') ];
+    const newAmount = items.find((value) => value.dataset.id === id);
+    console.log(newAmount);
+
+    newAmount.textContent = amount;
+    console.log(newAmount);
   }
 
   // add one to the item count
@@ -62,6 +71,21 @@ function displayCartItemsDOM() {
   cart.forEach((cartItem) => {
     addToCartDOM(cartItem);
   });
+}
+
+function increaseAmount(id) {
+  let newAmount;
+
+  cart = cart.map((cartItem) => {
+    if (cartItem.id === id) {
+      newAmount = cartItem.amount + 1;
+      cartItem = { ...cartItem, amount: newAmount };
+    }
+
+    return cartItem;
+  });
+
+  return newAmount;
 }
 
 function setupCartFunctionality() {

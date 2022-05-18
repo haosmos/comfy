@@ -1,7 +1,7 @@
 import { formatPrice } from '../utils.js';
-import { addToCart } from '../cart/setupCart.js';
+import { addToCart }   from '../cart/setupCart.js';
 
-const display = (products, element) => {
+const display = (products, element, filter) => {
   // display products
   element.innerHTML = products.map((product) => {
     const { id, name, price, image } = product;
@@ -36,17 +36,7 @@ const display = (products, element) => {
     `;
   }).join('');
 
-  // console.log(localStorage);
-
-  // element.addEventListener('click', (e) => {
-  //   const parent = e.target.parentElement;
-  //   console.log(parent);
-  //
-  //   if (parent.classList.contains('product-cart-btn')) {
-  //     addToCart(parent.dataset.id);
-  //   }
-  //
-  // });
+  if (filter) return;
 
   element.addEventListener('click', function (e) {
     const parent = e.target.parentElement;

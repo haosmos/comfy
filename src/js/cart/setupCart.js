@@ -129,24 +129,9 @@ function setupCartFunctionality() {
     if (parent.classList.contains('cart-item-decrease-btn')) {
       const newAmount = decreaseAmount(parentId);
 
-      function removeItemFromLocalStorage(id) {
-        let cartItems = localStorage.getItem('cart');
-        console.log(cartItems);
-        let itemsID = JSON.parse(cartItems);
-        console.log(itemsID);
-        let newCartItems = itemsID.filter((item) => item.id !== id);
-        console.log(newCartItems);
-        localStorage.setItem('cart', JSON.stringify(newCartItems));
-        localStorage.getItem('cart');
-      }
-
       if (newAmount === 0) {
-        removeItem(id);
+        removeItem(parentId);
         parent.parentElement.parentElement.remove();
-
-        removeItemFromLocalStorage(id);
-        // localStorage.removeItem('cart.id');
-        // console.log(localStorage.cart[id]);
       } else {
         parent.previousElementSibling.textContent = newAmount;
       }

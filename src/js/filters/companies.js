@@ -1,8 +1,8 @@
 import { getElement } from '../utils.js';
-import display from '../products/displayProducts.js';
+import display        from '../products/displayProducts.js';
 
 const setupCompanies = (store) => {
-  let companies = ["all", ...new Set(store.map((product) => product.company))]
+  let companies = [ 'all', ...new Set(store.map((product) => product.company)) ]
 
   const companiesDOM = getElement('.companies');
 
@@ -17,12 +17,12 @@ const setupCompanies = (store) => {
     if (element.classList.contains('company-btn')) {
       let newStore = [];
       if (element.textContent === 'all') {
-        newStore = [...store];
+        newStore = [ ...store ];
       } else {
         newStore =
           store.filter((product) => product.company === element.textContent);
       }
-      display(newStore, getElement(".products-container"));
+      display(newStore, getElement('.products-container'), true);
     }
   });
 };

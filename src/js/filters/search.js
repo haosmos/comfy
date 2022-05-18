@@ -1,11 +1,11 @@
 import { getElement } from '../utils.js';
-import display from '../products/displayProducts.js';
+import display        from '../products/displayProducts.js';
 
 const setupSearch = (store) => {
-  const form = getElement(".input-form");
-  const nameInput = getElement(".search-input");
+  const form = getElement('.input-form');
+  const nameInput = getElement('.search-input');
 
-  form.addEventListener("keyup", () => {
+  form.addEventListener('keyup', () => {
     const value = nameInput.value;
 
     if (value) {
@@ -19,16 +19,16 @@ const setupSearch = (store) => {
 
       });
 
-      display(newStore, getElement(".products-container"));
+      display(newStore, getElement('.products-container'), true);
 
       if (newStore.length < 1) {
-        const products = getElement(".products-container");
+        const products = getElement('.products-container');
         products.innerHTML =
           `<h3 class="filter-error">Sorry, no products matched </br> your search</h3>`;
       }
 
     } else {
-      display(store, getElement(".products-container"));
+      display(store, getElement('.products-container'));
     }
   });
 };

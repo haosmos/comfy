@@ -4,8 +4,8 @@ import '../cart/toggleCart.js';
 import '../cart/setupCart.js';
 // import fetchProducts from "../products/fetchProducts";
 // specific
-import { addToCart } from '../cart/setupCart.js';
-import { store } from "../store";
+import { addToCart }                                 from '../cart/setupCart.js';
+import { store }                                     from '../store';
 import { singleProductUrl, getElement, formatPrice } from '../utils.js';
 
 // selections
@@ -70,18 +70,7 @@ export default async function displayProductData() {
   cartBtn.addEventListener('click', () => {
     addToCart(productID);
   });
-
 }
 
-
-// window.addEventListener('load', async () => {
-//   console.log("store from product", store);
-//   // const urlID = window.location.search;
-//
-//   // get product id from url
-//   // const response = await fetch(`${singleProductUrl}`);
-//   loading.style.display = 'none';
-//   // console.log(response);
-// });
 
 

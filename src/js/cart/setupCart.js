@@ -33,7 +33,7 @@ export const addToCart = (id) => {
     // update values
     const amount = increaseAmount(id);
 
-    const items = [ ...cartItemDOM.querySelectorAll('.cart-item-amount') ];
+    const items = [ ...cartItemsDOM.querySelectorAll('.cart-item-amount') ];
     const newAmount = items.find((value) => value.dataset.id === id);
 
     newAmount.textContent = amount;
@@ -97,6 +97,10 @@ function setupCartFunctionality() {
     const id = element.dataset.id;
     const parentId = e.target.parentElement.dataset.id;
 
+    // console.log(element);
+    // console.log(parent);
+    // console.log(id);
+    // console.log(parentId);
     // remove item
     if (element.classList.contains('cart-item-remove-btn')) {
       removeItem(id);
@@ -104,8 +108,13 @@ function setupCartFunctionality() {
     }
 
     // increase amount
+    if (parent.classList.contains('cart-item-increase-btn')) {
+      const newAmount = increaseAmount(parentId);
+      parent.nextElementSibling.textContent = newAmount;
+    }
 
     // decrease amount
+
 
     displayCartItemCount();
     displayCartTotal();

@@ -11,7 +11,7 @@ import addToCartDOM    from './addToCartDOM.js';
 // set items
 
 const cartItemCountDOM = getElement('.cart-item-count');
-const cartItemDOM = getElement('.cart-items');
+const cartItemsDOM = getElement('.cart-items');
 const cartTotalDOM = getElement('.cart-total');
 
 let cart = getStorageItem('cart');
@@ -32,14 +32,11 @@ export const addToCart = (id) => {
   } else {
     // update values
     const amount = increaseAmount(id);
-    console.log(amount);
 
     const items = [ ...cartItemDOM.querySelectorAll('.cart-item-amount') ];
     const newAmount = items.find((value) => value.dataset.id === id);
-    console.log(newAmount);
 
     newAmount.textContent = amount;
-    console.log(newAmount);
   }
 
   // add one to the item count
@@ -73,6 +70,11 @@ function displayCartItemsDOM() {
   });
 }
 
+function removeItem(id) {
+  cart = cart.filter((cartItem) => cartItem.id !== id);
+  console.log(cart);
+}
+
 function increaseAmount(id) {
   let newAmount;
 
@@ -89,7 +91,26 @@ function increaseAmount(id) {
 }
 
 function setupCartFunctionality() {
+  cartItemsDOM.addEventListener('click', (e) => {
+    const element = e.target;
+    const parent = e.target.parentElement;
+    const id = element.dataset.id;
+    const parentId = e.target.parentElement.dataset.id;
 
+    // remove item
+    if (element.classList.contains('cart-item-remove-btn')) {
+      removeItem(id);
+      parent.parentElement.remove();
+    }
+
+    // increase amount
+
+    // decrease amount
+
+    displayCartItemCount();
+    displayCartTotal();
+    setStorageItem('cart', cart);
+  });
 }
 
 const init = () => {

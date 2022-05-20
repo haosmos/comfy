@@ -28,7 +28,7 @@ const setupSearch = (store) => {
       }
 
     } else {
-      display(store, getElement('.products-container'));
+      display(store, getElement('.products-container'), true);
     }
   });
 };

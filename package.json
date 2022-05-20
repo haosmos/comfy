@@ -3,8 +3,8 @@
 	"version": "1.0.0",
 	"description": "e-commerce store",
 	"scripts": {
-		"dev": "parcel index.pug src/pug/pages/*",
-		"build": "parcel build index.pug src/pug/pages/* --public-url ./ --no-scope-hoist"
+		"dev": "parcel index.pug src/pug/pages/*.pug",
+		"build": "parcel build index.pug src/pug/pages/*.pug --dist-dir prod"
 	},
 	"author": "chaosmos",
 	"license": "ISC",
